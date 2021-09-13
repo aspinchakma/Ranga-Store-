@@ -10,7 +10,6 @@ const loadProducts = () => {
 const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
-    // console.log(product.id);
 
     const image = product.image;
     const div = document.createElement("div");
@@ -27,6 +26,8 @@ const showProducts = (products) => {
       <button id="details-btn" class="btn btn-danger single-item-button">Details</button></div>
       `;
     document.getElementById("all-products").appendChild(div);
+    const description = product.description;
+    const shortDescription = description.slice(0, 150)
 
 
     // show details 
@@ -43,9 +44,13 @@ const showProducts = (products) => {
     <img class="product-image" src=${image}></img>
       </div>
       <h3>${product.title}</h3>
+      <h4>Short Description</h4>
+      <p>${shortDescription}</p>
       <p style="color: #315f72">Category: ${product.category}</p>
       <p style="color:#1A9CB7">Rating :${product.rating.rate}    Total-Rating: ${product.rating.count}</p>
       <h2 style="color: #F89647;font-weight:600;">Price: $ ${product.price}</h2>
+      
+
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
       <button id="details-btn" class="btn btn-danger single-item-button">Details</button>
       `;
