@@ -63,6 +63,7 @@ body {
   box-shadow: 4px 4px 7px gray;
   border-radius: 10px;
   border: 1px solid cyan;
+  background-color: rgb(250, 244, 244);
 }
 .product-image {
   width: 150px;
