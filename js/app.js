@@ -10,6 +10,8 @@ const loadProducts = () => {
 const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
+    // console.log(product.id);
+
     const image = product.image;
     const div = document.createElement("div");
     div.classList.add("product");
@@ -22,9 +24,33 @@ const showProducts = (products) => {
       <p style="color:#1A9CB7">Rating :${product.rating.rate}    Total-Rating: ${product.rating.count}</p>
       <h2 style="color: #F89647;font-weight:600;">Price: $ ${product.price}</h2>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-      <button id="details-btn" class="btn btn-danger">Details</button></div>
+      <button id="details-btn" class="btn btn-danger single-item-button">Details</button></div>
       `;
     document.getElementById("all-products").appendChild(div);
+
+
+    // show details 
+    const showDetails = document.getElementById('show-details');
+    const button = div.childNodes[0].childNodes[13];
+    button.addEventListener('click', () => {
+      document.getElementById('show-details').textContent = '';
+      const div = document.createElement("div");
+      div.style.width = '25%';
+      div.style.textAlign = 'center';
+      div.style.margin = 'auto';
+      div.innerHTML = `
+      <div>
+    <img class="product-image" src=${image}></img>
+      </div>
+      <h3>${product.title}</h3>
+      <p style="color: #315f72">Category: ${product.category}</p>
+      <p style="color:#1A9CB7">Rating :${product.rating.rate}    Total-Rating: ${product.rating.count}</p>
+      <h2 style="color: #F89647;font-weight:600;">Price: $ ${product.price}</h2>
+      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
+      <button id="details-btn" class="btn btn-danger single-item-button">Details</button>
+      `;
+      showDetails.appendChild(div);
+    })
   }
 };
 let count = 0;
