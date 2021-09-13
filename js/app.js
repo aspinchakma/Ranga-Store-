@@ -18,9 +18,9 @@ const showProducts = (products) => {
     <img class="product-image" src=${image}></img>
       </div>
       <h3>${product.title}</h3>
-      <p>Category: ${product.category}</p>
-      <p>Rating :${product.rating.rate}    Total-Rating: ${product.rating.count}</p>
-      <h2>Price: $ ${product.price}</h2>
+      <p style="color: #315f72">Category: ${product.category}</p>
+      <p style="color:#1A9CB7">Rating :${product.rating.rate}    Total-Rating: ${product.rating.count}</p>
+      <h2 style="color: #F89647;font-weight:600;">Price: $ ${product.price}</h2>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
       <button id="details-btn" class="btn btn-danger">Details</button></div>
       `;

@@ -3,7 +3,7 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 .header-title{
-  color: #077b8a;
+  color: #4203c9;
   font-weight: 600;
   text-align: center;
 };
@@ -37,6 +37,7 @@ body {
 #all-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-gap:30px;
   /* border: 1px solid black; */
   text-align: center;
   width: 100%;
